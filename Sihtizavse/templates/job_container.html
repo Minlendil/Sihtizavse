@@ -1,0 +1,27 @@
+<div class="container">
+
+{% for place in places %}
+
+<div class="add_container">
+
+    <h2 style="margin-bottom:3px;"><a href="{{place.Url}}" style="text-decoration: none" target="_blank">
+        {{ place.Title }} </a>||  <span style="color:#B9B9B9; font-size: 20px;"><i>{{ place.Site }}</i></span></h2>
+    <div class="under_title">
+        <b>{{ place.Place_of_work }}, {{ place.Region }}</b>
+    </div>
+
+    <div class="left_add_container">
+        <b>Delodajalec:</b> {{ place.Company }}</br>
+        <span style="margin-top:3px;"><b>Datum objave oglasa:</b> {{ place.Date_of_announcement }}</span>
+    </div>
+    <div class="job_description">
+        {{ place.Description }}
+    </div>
+    <p>
+      <b>Prijava možna do:</b> {{ place.Application_date }}
+    </p></br>
+    </div>
+
+{% endfor %}
+
+</div>

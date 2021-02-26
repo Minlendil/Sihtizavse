@@ -1,0 +1,13 @@
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Current google-chrome version is 87.0.4280
+INFO:WDM:Get LATEST driver version for 87.0.4280
+INFO:WDM:Get LATEST driver version for 87.0.4280
+INFO:WDM:Trying to download new driver from https://chromedriver.storage.googleapis.com/87.0.4280.88/chromedriver_linux64.zip
+INFO:WDM:Driver has been saved in cache [/home/samo/.wdm/drivers/chromedriver/linux64/87.0.4280.88]
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Current google-chrome version is 88.0.4324
+INFO:WDM:Get LATEST driver version for 88.0.4324
+INFO:WDM:There is no [linux64] chromedriver for browser 88.0.4324 in cache
+INFO:WDM:Get LATEST driver version for 88.0.4324
+INFO:WDM:Trying to download new driver from https://chromedriver.storage.googleapis.com/88.0.4324.96/chromedriver_linux64.zip
+INFO:WDM:Driver has been saved in cache [/home/samo/.wdm/drivers/chromedriver/linux64/88.0.4324.96]

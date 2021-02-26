@@ -1,0 +1,80 @@
+{%extends "layout.html"%}
+{% block content %}
+
+<div class="search_bar">
+    <form method="POST" action="{{url_for('index')}}">
+        <div class="input_wrapper">
+            <input type="text" class="input_field_left"  name="key_word" autocomplete="off" placeholder="Ključna beseda...">
+            <div class="dropdown">
+                <button disabled class="dropbtn">Izberi regijo</button>
+                    <div class="dropdown-content">
+        <input type="checkbox" id="Gorenjska" name="regions" value="Gorenjska" >
+        <label for="Gorenjska">Gorenjska</label></br>
+        <input type="checkbox" id="Goriška" name="regions" value="Goriška" >
+        <label for="Goriška">Goriška</label></br>
+        <input type="checkbox" id="Jugovzhodna Slovenija" name="regions" value="Jugovzhodna Slovenija">
+        <label for="Jugovzhodna Slovenija">Jugovzhodna Slovenija</label></br>
+        <input type="checkbox" id="Koroška" name="regions" value="Koroška" >
+        <label for="Koroška">Koroška</label></br>
+        <input type="checkbox" id="Obalno-kraška" name="regions" value="Obalno-kraška">
+        <label for="Obalno-kraška">Obalno-kraška</label></br>
+        <input type="checkbox" id="Osrednjeslovenska" name="regions" value="Osrednjeslovenska">
+        <label for="Osrednjeslovenska">Osrednjeslovenska</label></br>
+        <input type="checkbox" id="Podravska" name="regions" value="Podravska" >
+        <label for="Podravska">Podravska</label></br>
+        <input type="checkbox" id="Pomurska" name="regions" value="Pomurska" >
+        <label for="Pomurska">Pomurska</label></br>
+        <input type="checkbox" id="Posavska" name="regions" value="Posavska" >
+        <label for="Posavska">Posavska</label></br>
+        <input type="checkbox" id="Primorsko-notranjska" name="regions" value="Primorsko-notranjska">
+        <label for="Primorsko-notranjska">Primorsko-notranjska</label></br>
+        <input type="checkbox" id="Savinjska" name="regions" value="Savinjska">
+        <label for="Savinjska">Savinjska</label></br>
+        <input type="checkbox" id="Zasavska" name="regions" value="Zasavska">
+        <label for="Zasavska">Zasavska</label></br>
+        <input type="checkbox" id="Tujina" name="regions" value="Tujina">
+        <label for="Tujina">Tujina</label>
+                    </div>
+            </div>
+            <input type="text" class="input_field_right" name="city" autocomplete="off" placeholder="Ime kraja...">
+            <input type="submit" value="Išči" class="submit">
+        </div>
+        <div class="left-sidebar">
+            <div class="choose_date">
+                <p style="margin-left:3px;">Datum objave:</p>
+                <input type="radio" id="danes" name="date" value="1" >
+                <label for="danes">Danes</label><br>
+                <input type="radio" id="3dni" name="date" value="3" >
+                <label for="3dni">Zadnje 3 dni</label><br>
+                <input type="radio" id="teden" name="date" value="7" >
+                <label for="teden">Pretekli teden</label><br>
+                <input type="radio" id="mesec" name="date" value="30" >
+                <label for="mesec">Pretekli mesec</label>
+            </div>
+            <div class="choose_site">
+                <p style="margin-left:3px;">Strani iskanja:</p>
+                <input type="checkbox" id="deloglasnik" name="sites" value="1" checked>
+                <label for="deloglasnik">deloglasnik.si</label></br>
+                <input type="checkbox" id="optius" name="sites" value="2" checked>
+                <label for="optius">optius.com</label></br>
+                <input type="checkbox" id="mojedelo" name="sites" value="3" checked>
+                <label for="mojedelo">mojedelo.com</label></br>
+                <input type="checkbox" id="zaposlitev" name="sites" value="4" checked>
+                <label for="zaposlitev">zaposlitev.info</label></br>
+                <input type="checkbox" id="iskanjedela" name="sites" value="5" checked>
+                <label for="iskanjedela">iskanjedela.si</label></br>
+            </div>
+        </div>
+    </form>
+    <div class="indicator">
+    Število zadetkov: {{ count }} | Naključna delovna mesta
+    </div>
+</div>
+
+
+
+
+{% include "job_container.html" %}
+
+
+{% endblock %}

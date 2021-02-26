@@ -1,0 +1,83 @@
+{%extends "layout.html"%}
+{% block content %}
+
+<div class="search">
+    <form method="POST" action="{{url_for('index')}}">
+        <div class="input_wrapper">
+            <input type="text" class="input_field_left"  name="key_word" autocomplete="off" placeholder="Ključna beseda...">
+            <div class="dropdown">
+                <button disabled class="dropbtn"> {{ izberi_regijo }}</button>
+                    <div class="dropdown-content">
+        <input type="checkbox" id="Gorenjska" name="regions" value="Gorenjska" {{ regions_ticked['Gorenjska'] }}>
+        <label for="Gorenjska">Gorenjska</label></br>
+        <input type="checkbox" id="Goriška" name="regions" value="Goriška" {{ regions_ticked['Goriška'] }}>
+        <label for="Goriška">Goriška</label></br>
+        <input type="checkbox" id="Jugovzhodna Slovenija" name="regions" value="Jugovzhodna Slovenija"
+               {{ regions_ticked['Jugovzhodna Slovenija'] }}>
+        <label for="Jugovzhodna Slovenija">Jugovzhodna Slovenija</label></br>
+        <input type="checkbox" id="Koroška" name="regions" value="Koroška" {{ regions_ticked['Koroška'] }}>
+        <label for="Koroška">Koroška</label></br>
+        <input type="checkbox" id="Obalno-kraška" name="regions" value="Obalno-kraška"
+               {{ regions_ticked['Obalno-kraška'] }}>
+        <label for="Obalno-kraška">Obalno-kraška</label></br>
+        <input type="checkbox" id="Osrednjeslovenska" name="regions" value="Osrednjeslovenska"
+               {{ regions_ticked['Osrednjeslovenska'] }}>
+        <label for="Osrednjeslovenska">Osrednjeslovenska</label></br>
+        <input type="checkbox" id="Podravska" name="regions" value="Podravska" {{ regions_ticked['Podravska'] }}>
+        <label for="Podravska">Podravska</label></br>
+        <input type="checkbox" id="Pomurska" name="regions" value="Pomurska" {{ regions_ticked['Pomurska'] }}>
+        <label for="Pomurska">Pomurska</label></br>
+        <input type="checkbox" id="Posavska" name="regions" value="Posavska" {{ regions_ticked['Posavska'] }}>
+        <label for="Posavska">Posavska</label></br>
+        <input type="checkbox" id="Primorsko-notranjska" name="regions" value="Primorsko-notranjska"
+               {{ regions_ticked['Primorsko-notranjska'] }}>
+        <label for="Primorsko-notranjska">Primorsko-notranjska</label></br>
+        <input type="checkbox" id="Savinjska" name="regions" value="Savinjska" {{ regions_ticked['Savinjska'] }}>
+        <label for="Savinjska">Savinjska</label></br>
+        <input type="checkbox" id="Zasavska" name="regions" value="Zasavska" {{ regions_ticked['Zasavska'] }}>
+        <label for="Zasavska">Zasavska</label></br>
+        <input type="checkbox" id="Tujina" name="regions" value="Tujina" {{ regions_ticked['Tujina'] }}>
+        <label for="Tujina">Tujina</label>
+                    </div>
+            </div>
+            <input type="text" class="input_field_right" name="city" autocomplete="off" placeholder="Ime kraja...">
+            <input type="submit" value="Išči" class="submit">
+        </div>
+        <div class="left-sidebar">
+            <div class="choose_date">
+                <p style="margin-left:3px;">Datum objave:</p>
+                <input type="radio" id="danes" name="date" value="1" {{ datum_ticked['1'] }}>
+                <label for="danes">Danes</label><br>
+                <input type="radio" id="3dni" name="date" value="3" {{ datum_ticked['3'] }}>
+                <label for="3dni">Zadnje 3 dni</label><br>
+                <input type="radio" id="teden" name="date" value="7" {{ datum_ticked['7'] }}>
+                <label for="teden">Pretekli teden</label><br>
+                <input type="radio" id="mesec" name="date" value="30" {{ datum_ticked['30'] }}>
+                <label for="mesec">Pretekli mesec</label>
+            </div>
+            <div class="choose_site">
+                <p style="margin-left:3px;">Strani iskanja:</p>
+                <input type="checkbox" id="deloglasnik" name="sites" value="1" {{ sites_ticked['1'] }}>
+                <label for="deloglasnik">deloglasnik.si</label></br>
+                <input type="checkbox" id="optius" name="sites" value="2" {{ sites_ticked['2'] }}>
+                <label for="optius">optius.com</label></br>
+                <input type="checkbox" id="mojedelo" name="sites" value="3" {{ sites_ticked['3'] }}>
+                <label for="mojedelo">mojedelo.com</label></br>
+                <input type="checkbox" id="zaposlitev" name="sites" value="4" {{ sites_ticked['4'] }}>
+                <label for="zaposlitev">zaposlitev.info</label></br>
+                <input type="checkbox" id="iskanjedela" name="sites" value="5" {{ sites_ticked['5'] }}>
+                <label for="iskanjedela">iskanjedela.si</label></br>
+            </div>
+        </div>
+    </form>
+    <div class="indicator">
+    Število zadetkov: {{ count }} | {{ regions }} {{ kraj }} {{ key_word }} {{ date }}
+    </div>
+</div>
+
+
+
+
+{% include "job_container.html" %}
+
+{% endblock %}
