@@ -3,6 +3,7 @@ import requests
 from pandas import DataFrame, read_csv
 from datetime import date, timedelta, datetime
 
+
 def form_text(opis):
     if len(opis) <= 250:
         return opis
@@ -35,7 +36,7 @@ def optius():
         c = r.content
         soup = BeautifulSoup(c, "html.parser")
         all = soup.find("div", "pagination")
-        # try da preveri če je samo ena stran z zadetki ali jih je več. Če je samo ena gre na except.
+        # try da preveri če je samo ena stran z zadetki/delovnimi mesti ali jih je več. Če je samo ena gre na except.
         try:
             num_of_li = len(all.find_all("li")) - 1
             if num_of_li < 7:

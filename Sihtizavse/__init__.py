@@ -191,7 +191,7 @@ def index():
 
         count = len(places)
 
-    # začasna rešitev, preden se lotim paganation nardit - zmanjša prikaz zadetkov na 300
+    # začasna rešitev, preden se lotim paganation nardit - zmanjša prikaz zadetkov na 500
     if len(places) > 1000:
         places = places[:500]
         count = len(places)

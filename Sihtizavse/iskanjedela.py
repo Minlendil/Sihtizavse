@@ -62,7 +62,7 @@ def iskanjedela():
     
     count=0
     
-    # izberi datum (v drugi vrstici): 0 = danes, 1 = three days, 2...
+    # izberi datum (v drugi vrstici): 0 = danes, 1 = tri dni, 2...
     driver.find_element_by_xpath("//button[contains(text(), 'datum objave')]").click()
     driver.find_elements_by_xpath("//div[@class = 'facet-dropdown__menu py-2 dropdown-menu show']/button")[0].click()
     driver.find_element_by_xpath("//button[contains(text(), 'datum objave')]").click()
