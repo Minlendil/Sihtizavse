@@ -139,3 +139,7 @@ def iskanjedela():
     print("iskanjedela končan!")
     print("število zadetkov: " + str(len(df)))
     print("--------------------------------------")
+
+
+if __name__ == "__main__":
+    iskanjedela()

@@ -86,3 +86,7 @@ def optius():
     print("Optius končan!")
     print("število zadetkov: " + str(len(df)))
     print("--------------------------------------")
+
+
+if __name__ == "__main__":
+    optius()

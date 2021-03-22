@@ -95,3 +95,7 @@ def zaposlitev():
     print("Zaposlitev končan!")
     print("število zadetkov: " + str(len(list_of_dics)))
     print("--------------------------------------")
+
+
+if __name__ == "__main__":
+    zaposlitev()
